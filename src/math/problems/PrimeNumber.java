@@ -1,5 +1,7 @@
 package math.problems;
 
+import java.util.Scanner;
+
 public class PrimeNumber {
 
 	public static void main(String[] args) {
@@ -12,6 +14,16 @@ public class PrimeNumber {
 		 * Use any databases[MongoDB, Oracle, MySql] to store data and retrieve data.
 		 *
 		 */
+		Scanner scanner=new Scanner(System.in);
+		System.out.println("Enter the number ");
+		String input=scanner.nextLine();
+		int maxNumber=Integer.parseInt(input);
+		System.out.println("List of the prime number between - " +maxNumber);
+
+
+
+
+
 
 	}
 

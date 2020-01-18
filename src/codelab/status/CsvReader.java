@@ -14,7 +14,7 @@ public class CsvReader {
          You need to find the average score of the class.
          */
 
-        String csvFilePath = System.getProperty("user.dir") + "/src/codelab/status/roster-file-09-07-2019.csv";
+        String csvFilePath = System.getProperty("user.dir") + "/src/codelab/status/roster-file-12-23-2018.csv";
         String line = "";
         String cvsSplitBy = ",";
         BufferedReader br = null;
@@ -40,28 +40,36 @@ public class CsvReader {
         Collections.sort(roster);
         for(Trainee student:roster) {
             if (student.getNumberOfExercisesSolved()>=600) {
-                System.out.print("You did pretty good-->                    ");
+                System.out.print("You did pretty good-->");
                 System.out.println(student.getFirstName() + " " + student.getLastName() + " " + student.getNumberOfExercisesSolved());
             } else if (student.getNumberOfExercisesSolved()>=500 && student.getNumberOfExercisesSolved()<600) {
-                System.out.print("You could do little better-->             ");
+                System.out.print("You could do little better-->");
                 System.out.println(student.getFirstName() + " " + student.getLastName() + " " + student.getNumberOfExercisesSolved());
             }else if (student.getNumberOfExercisesSolved()>=400 && student.getNumberOfExercisesSolved()<500) {
-                System.out.print("You could do better-->                    ");
+                System.out.print("You could do better-->");
                 System.out.println(student.getFirstName() + " " + student.getLastName() + " " + student.getNumberOfExercisesSolved());
             }else if (student.getNumberOfExercisesSolved()>=300&& student.getNumberOfExercisesSolved()<400) {
-                System.out.print("You should have done more-->              ");
+                System.out.print("You should have done more--> ");
                 System.out.println(student.getFirstName() + " " + student.getLastName() + " " + student.getNumberOfExercisesSolved());
             }else if (student.getNumberOfExercisesSolved()>=200&&student.getNumberOfExercisesSolved()<300) {
-                System.out.print("You haven't done enough-->                 ");
+                System.out.print("You haven't done enough--> ");
                 System.out.println(student.getFirstName() + " " + student.getLastName() + " " + student.getNumberOfExercisesSolved());
             }else if (student.getNumberOfExercisesSolved()>=100&&student.getNumberOfExercisesSolved()<200) {
-                System.out.print("You did not take this course seriously-->   ");
+                System.out.print("You did not take this course seriously--> ");
                 System.out.println(student.getFirstName() + " " + student.getLastName() + " " + student.getNumberOfExercisesSolved());
             }else if (student.getNumberOfExercisesSolved()<100) {
-                System.out.print("Shame on You !-->                           ");
+                System.out.print("Shame on You !--> ");
                 System.out.println(student.getFirstName() + " " + student.getLastName() + " " + student.getNumberOfExercisesSolved());
             }
         }
+
+        int size = roster.size();
+        int i = 0;
+        for (Trainee tr: roster) {
+            i+=tr.getNumberOfExercisesSolved();
+        }
+
+        System.out.println("\naverage score of the class : "+i/size);
 
     }
 
