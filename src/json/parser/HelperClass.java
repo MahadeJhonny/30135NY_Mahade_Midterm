@@ -2,11 +2,7 @@
 
 package json.parser;
 
-
-
-
-
-    public class HelperClass {
+        public class HelperClass {
         private String source;
         private String author;
         private String title;
